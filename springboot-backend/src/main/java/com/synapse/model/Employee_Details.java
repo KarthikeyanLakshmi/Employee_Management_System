@@ -23,7 +23,7 @@ public class Employee_Details {
     @NotNull(message = "Date of Birth is required")
     @Past(message = "Date of Birth must be in the past")
     @Column(name = "DoB", nullable = false)
-    private LocalDate dob;
+    private LocalDate employeeDOB;
 
     @Column(name = "Marital_Status")
     private String maritalStatus;
@@ -34,16 +34,16 @@ public class Employee_Details {
 
     @Size(max = 255, message = "Address cannot exceed 255 characters")
     @Column(name = "Address")
-    private String address;
+    private String employeeAddress;
 
     @Email(message = "Invalid email format")
     @Column(name = "Personal_email")
     private String personalEmail;
 
     @Column(name = "Department")
-    private String department;
+    private String employeeDepartment;
 
     @Column(name = "Branch")
-    private String branch;
+    private String EmployeeBranch;
 
 }
