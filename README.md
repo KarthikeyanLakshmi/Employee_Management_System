@@ -17,7 +17,7 @@ Spring Boot project built with Maven or Gradle
 
 VS Code or any IDE (like IntelliJ, STS)
 
-## 🛠️ 2. MySQL Setup
+## 2. MySQL Setup
 - Start MySQL server
 - Make sure MySQL is running.
 - Create database
@@ -31,7 +31,7 @@ CREATE USER
 GRANT ALL PRIVILEGES ON employee_db.* TO 'springuser'@'localhost';
 ```
 
-## 🧩 3. Spring Boot Backend
+## 3. Spring Boot Backend
 - Application.properties or application.yml
   Ensure your DB settings are configured correctly:
 
@@ -66,7 +66,7 @@ You should see something like:
 Tomcat started on port(s): 8080
 Started Application in X seconds
 ```
-## 🎨 4. Angular Frontend
+## 4. Angular Frontend
 - Navigate to frontend folder
 ```bash
 cd path/to/angular-frontend
@@ -84,7 +84,7 @@ ng serve
 By default, it runs at:
 ➡️ http://localhost:4200
 
-## 🔁 5. Integration Notes
+## 5. Integration Notes
 Ensure:
 Angular app makes API calls to http://localhost:8080/api/employees or your actual Spring Boot endpoint.
 
@@ -98,7 +98,7 @@ public class EmployeeController {
     ...
 }
 ```
-## ✅ 6. Test the Full Flow
+## 6. Test the Full Flow
 Go to http://localhost:4200
 
 Fill and submit the employee form
@@ -109,7 +109,7 @@ Check the data is sent to Spring Boot and inserted into MySQL:
 SELECT * FROM employee;
 ```
 
-## 🧪 Optional: Use Postman to test backend
+## Optional: Use Postman to test backend
 Test the API directly via Postman:
 
 GET http://localhost:8080/api/employees
