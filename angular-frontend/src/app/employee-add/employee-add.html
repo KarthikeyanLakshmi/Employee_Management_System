@@ -4,9 +4,9 @@
       <h2 class="text-center mb-0">Employee Management System</h2>
     </div>
     <div class="card-body">
-      <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+      <form (ngSubmit)="onSubmit()" #employeeAdd="ngForm">
         
-        <!-- Name -->
+        
         <div class="mb-3">
           <label class="form-label fw-bold">Name</label>
           <input type="text" class="form-control" 
@@ -79,8 +79,8 @@
         <!-- Submit Button -->
         <div class="d-grid">
           <button type="submit" class="btn btn-success btn-lg py-3"
-                  [disabled]="!employeeForm.form.valid">
-            Insert Employee
+                  [disabled]="!employeeAdd.form.valid">
+            Add Employee
           </button>
         </div>
       </form>

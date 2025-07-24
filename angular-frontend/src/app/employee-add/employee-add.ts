@@ -10,7 +10,7 @@ import { EmployeeService } from '../services/employee.service';
   templateUrl: './employee-add.html',
   styleUrls: ['./employee-add.scss']
 })
-export class EmployeeAddComponent {
+export class EmployeeAdd {
   employee: any = {
     employeeName: '',
     dob: '',
