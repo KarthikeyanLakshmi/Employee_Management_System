@@ -1,1 +1,89 @@
-<p>employee-add works!</p>
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h2 class="text-center mb-0">Employee Management System</h2>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+        
+        <!-- Name -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Name</label>
+          <input type="text" class="form-control" 
+                 [(ngModel)]="employee.employeeName" 
+                 name="employeeName" required>
+        </div>
+        
+        <!-- DOB -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Date of Birth</label>
+          <input type="date" class="form-control" 
+                 [(ngModel)]="employee.dob" 
+                 name="dob" required>
+        </div>
+        
+        <!-- Marital Status -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Marital Status</label>
+          <select class="form-select" 
+                  [(ngModel)]="employee.maritalStatus" 
+                  name="maritalStatus">
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Widowed">Widowed</option>
+          </select>
+        </div>
+        
+        <!-- Contact No -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Contact No.</label>
+          <input type="text" class="form-control" 
+                 [(ngModel)]="employee.contactNo" 
+                 name="contactNo" 
+                 placeholder="10-digit number">
+        </div>
+        
+        <!-- Address -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Address</label>
+          <textarea class="form-control" rows="3" 
+                    [(ngModel)]="employee.address" 
+                    name="address"></textarea>
+        </div>
+        
+        <!-- Personal Email -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Personal Email</label>
+          <input type="email" class="form-control" 
+                 [(ngModel)]="employee.personalEmail" 
+                 name="personalEmail">
+        </div>
+        
+        <!-- Department -->
+        <div class="mb-3">
+          <label class="form-label fw-bold">Department</label>
+          <input type="text" class="form-control" 
+                 [(ngModel)]="employee.department" 
+                 name="department">
+        </div>
+        
+        <!-- Branch -->
+        <div class="mb-4">
+          <label class="form-label fw-bold">Branch</label>
+          <input type="text" class="form-control" 
+                 [(ngModel)]="employee.branch" 
+                 name="branch">
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success btn-lg py-3"
+                  [disabled]="!employeeForm.form.valid">
+            Insert Employee
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
