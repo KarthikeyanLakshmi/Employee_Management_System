@@ -1,16 +1,24 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{ title() }}!</h1>
-
-    <router-outlet />
+    <div class="container py-4">
+      <router-outlet></router-outlet>
+    </div>
   `,
-  styles: [],
+  styles: [`
+    :host {
+      display: block;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+      padding: 20px;
+    }
+  `]
 })
-export class App {
-  protected readonly title = signal('angular-frontend');
+export class AppComponent {
+  title = 'Employee Management System';
 }
