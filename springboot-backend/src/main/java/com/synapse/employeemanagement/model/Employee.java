@@ -1,4 +1,4 @@
-package com.synapse.model;
+package com.synapse.employeemanagement.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Table (name = "Employees")
 @Data
 
-public class Employee_Details {
+public class Employee {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,27 +23,27 @@ public class Employee_Details {
     @NotNull(message = "Date of Birth is required")
     @Past(message = "Date of Birth must be in the past")
     @Column(name = "DoB", nullable = false)
-    private LocalDate dob;
+    private LocalDate employeeDob;
 
     @Column(name = "Marital_Status")
-    private String maritalStatus;
+    private String employeeMStatus;
 
     @Pattern(regexp = "^\\d{10}$", message = "Contact No must be 10 digits")
     @Column(name = "Contact_No")
-    private String contactNo;
+    private String employeeContactNo;
 
     @Size(max = 255, message = "Address cannot exceed 255 characters")
     @Column(name = "Address")
-    private String address;
+    private String employeeAddress;
 
     @Email(message = "Invalid email format")
     @Column(name = "Personal_email")
-    private String personalEmail;
+    private String employeePersonalEmail;
 
     @Column(name = "Department")
-    private String department;
+    private String synapseDepartment;
 
     @Column(name = "Branch")
-    private String branch;
+    private String synapseBranch;
 
 }

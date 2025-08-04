@@ -1,4 +1,4 @@
-package com.synapse.employee_management_springboot;
+package com.synapse.employeemanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
