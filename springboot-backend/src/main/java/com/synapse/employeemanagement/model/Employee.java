@@ -23,7 +23,11 @@ public class Employee {
     @NotNull(message = "Date of Birth is required")
     @Past(message = "Date of Birth must be in the past")
     @Column(name = "DoB", nullable = false)
+<<<<<<< HEAD:springboot-backend/src/main/java/com/synapse/employeemanagement/model/Employee.java
     private LocalDate employeeDob;
+=======
+    private LocalDate employeeDOB;
+>>>>>>> 6bccef8d4df0b4b232458dcb17a6a0c729d5801a:springboot-backend/src/main/java/com/synapse/model/Employee_Details.java
 
     @Column(name = "Marital_Status")
     private String employeeMStatus;
@@ -41,9 +45,16 @@ public class Employee {
     private String employeePersonalEmail;
 
     @Column(name = "Department")
+<<<<<<< HEAD:springboot-backend/src/main/java/com/synapse/employeemanagement/model/Employee.java
     private String synapseDepartment;
 
     @Column(name = "Branch")
     private String synapseBranch;
+=======
+    private String employeeDepartment;
+
+    @Column(name = "Branch")
+    private String EmployeeBranch;
+>>>>>>> 6bccef8d4df0b4b232458dcb17a6a0c729d5801a:springboot-backend/src/main/java/com/synapse/model/Employee_Details.java
 
 }
