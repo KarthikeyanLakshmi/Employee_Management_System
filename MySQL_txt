@@ -1,0 +1,14 @@
+CREATE DATABASE synapse;
+USE synapse;
+
+CREATE TABLE Employees (
+  Employee_ID INT AUTO_INCREMENT PRIMARY KEY,
+  Employee_Name VARCHAR(100) NOT NULL,
+  DoB DATE NOT NULL,
+  Marital_Status VARCHAR(100),
+  Contact_No VARCHAR(100),
+  Address VARCHAR(255),
+  Personal_email VARCHAR(100),
+  Department VARCHAR(100),
+  Branch VARCHAR(100)
+);
