@@ -1,7 +1,9 @@
-package com.synapse.controller;
+package com.synapse.employeemanagement.controller;
 
-import com.synapse.model.Employee_Details;
-import com.synapse.repository.Employee_Repo;
+import com.synapse.employeemanagement.model.Employee;
+import com.synapse.employeemanagement.repository.Employee_Repo;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,9 +26,14 @@ public class Employee_Controller {
     }
 
     @PostMapping
-    public ResponseEntity<Employee_Details> createEmployee(
-        @RequestBody @Valid Employee_Details employee) {
-        Employee_Details savedEmployee = employeeRepo.save(employee);
+    public ResponseEntity<Employee> createEmployee(
+        @RequestBody @Valid Employee employee) {
+        Employee savedEmployee = employeeRepo.save(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    }
+
+        @GetMapping
+    public List<Employee> getAllEmployees() {
+        return employeeRepo.findAll();
     }
 }
