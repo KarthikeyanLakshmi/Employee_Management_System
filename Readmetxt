@@ -1,0 +1,14 @@
+1. create mysql database
+
+2. Set username and password in application.properties
+
+2. run mysql server
+
+3. Treminal 1
+    cd springboot-backend
+    ./mvnw spring-boot:run
+
+4. Terminal 2
+    cd angular-backend
+    ng serve
+
