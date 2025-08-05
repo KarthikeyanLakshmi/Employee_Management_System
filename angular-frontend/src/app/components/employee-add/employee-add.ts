@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EmployeeService } from '../../services/employee.service';
+import { Employee } from '../../models/Employee.model';
 
 @Component({
   selector: 'app-employee-form',
@@ -10,10 +11,10 @@ import { EmployeeService } from '../../services/employee.service';
   templateUrl: './employee-add.html',
   styleUrls: ['./employee-add.scss']
 })
-export class EmployeeAdd {
-  employee: any = {
+export class EmployeeAddForm {
+  employee: Employee = {
     employeeName: '',
-    dob: '',
+    dob: new Date(),
     maritalStatus: 'Single',
     contactNo: '',
     address: '',
@@ -24,29 +25,19 @@ export class EmployeeAdd {
 
   constructor(private employeeService: EmployeeService) {}
 
-  onSubmit() {
-    // Convert date to ISO format (YYYY-MM-DD)
-    if (this.employee.dob) {
-      const dobDate = new Date(this.employee.dob);
-      this.employee.dob = dobDate.toISOString().split('T')[0];
-    }
-    
-    this.employeeService.createEmployee(this.employee).subscribe({
-      next: (res) => {
-        alert('Employee created successfully!');
+  onSubmit(): void {
+    this.employeeService.createEmployee(this.employee)
+      .subscribe(response => {
+        console.log('Employee created:', response);
+        alert('Employee added successfully!');
         this.resetForm();
-      },
-      error: (err) => {
-        console.error('Error creating employee:', err);
-        alert(`Error: ${err.error?.message || 'Unknown error'}`);
-      }
-    });
+      });
   }
 
   resetForm() {
     this.employee = {
       employeeName: '',
-      dob: '',
+      dob: new Date(),
       maritalStatus: 'Single',
       contactNo: '',
       address: '',
